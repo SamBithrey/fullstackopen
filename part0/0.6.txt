@@ -1,3 +1,7 @@
+
+participant browser
+participant server
+
 note over browser:
 user makes new note and saves
 end note

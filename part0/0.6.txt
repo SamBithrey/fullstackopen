@@ -1,0 +1,20 @@
+note over browser:
+user makes new note and saves
+end note
+
+note over browser: 
+update DOM with new note
+end note
+
+note over browser: 
+convert new note to JSON
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+note over server: 
+server add new note 
+to the notes page
+end note
+
+server-->browser: HTTP/1.1 201 Created JSON content {content: "new note", date: "2023-03-24T14:50:51.548Z"}

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Numbers from './Components/Numbers'
 import Filter from './Components/Filter'
 import NewPerson from './Components/NewPerson'
+import Notification from './Components/Notification'
 import operations from './Services/services'
 
 const App = () => {
@@ -11,6 +12,8 @@ const App = () => {
   const [newNumber, setNewNumber] = useState('')
   const [newFilter, setNewFilter] = useState('')
   const [showFilter, setShowFilter] = useState(false)
+  const [notification, setNotification] = useState("")
+  const [error, setError] = useState("")
 
   const hook = () => {
     //console.log('effect')
@@ -23,6 +26,20 @@ const App = () => {
   }
 
   useEffect(hook, [])
+  
+  const setToNotification = (message) => {
+    setNotification(message)
+    setTimeout(() => {
+      setNotification("")
+    }, 5000)
+  }
+
+  const setToError = (message) => {
+    setError(message)
+    setTimeout(() => {
+      setError("")
+    }, 5000)
+  }
 
   const setToPersons = (event) => {
     event.preventDefault()
@@ -44,7 +61,9 @@ const App = () => {
           .updateContact(url, changedContact)
           .then(res => {
             setPersons(persons.map(e => e.id !== contact.id ? e : res.data))
+            setToNotification(`${contact.name} Updated!`)
           })
+          .catch(err => setToError('Contact No Longer Exists'))
           setNewName('')
         return(
           setNewNumber(''))
@@ -59,6 +78,7 @@ const App = () => {
       .saveContact(newPerson)
       .then(savedContact => {
         setPersons(persons.concat(savedContact))
+        setToNotification(`${savedContact.name} Added!`)
         setNewName('')   
         setNewNumber('')  
       })
@@ -84,7 +104,11 @@ const App = () => {
     if(window.confirm('Are you sure you want to delete this contact?')){ 
       operations
         .removeContact(url)
-        .then(res => hook())     
+        .then(res => { 
+          hook()
+          setToNotification("Contact Deleted")
+        })
+        .catch(err => setToError("Contact No Longer Exists")) 
     }
   }
 
@@ -95,6 +119,7 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
+      <Notification notification={notification} error={error}/>
       <h3>Search Bar</h3>
         <Filter submit={setToShowFilter} filterName={newFilter} filterChange={handleFilterChange}/>
       <h3>New Person</h3>

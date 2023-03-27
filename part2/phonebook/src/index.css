@@ -1,0 +1,17 @@
+.notification {
+    width: fit-content;
+    padding: 5px;
+    border-style: solid;
+    border-color: green;
+    border-radius: 5px;
+    color: green;
+}
+
+.error{
+    width: fit-content;
+    padding: 5px;
+    border-style: solid;
+    border-color: red;
+    border-radius: 5px;
+    color: red;
+}

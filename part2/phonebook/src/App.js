@@ -2,11 +2,7 @@ import { useState, useEffect } from 'react'
 import Numbers from './Components/Numbers'
 import Filter from './Components/Filter'
 import NewPerson from './Components/NewPerson'
-<<<<<<< HEAD
 import operations from './Services/services'
-=======
-import axios from 'axios'
->>>>>>> aac8b7f66e8f4cf3346190632eccdbefc0dac132
 
 const App = () => {
   document.title = `Phonebook`;
@@ -18,19 +14,11 @@ const App = () => {
 
   const hook = () => {
     //console.log('effect')
-<<<<<<< HEAD
     operations
       .getData()
       .then(data => {
         //console.log('promise fulfilled')
         setPersons(data)
-=======
-    axios
-      .get('http://localhost:3001/persons')
-      .then(res => {
-        //console.log('promise fulfilled')
-        setPersons(res.data)
->>>>>>> aac8b7f66e8f4cf3346190632eccdbefc0dac132
       })
   }
 

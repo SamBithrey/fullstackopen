@@ -1,0 +1,15 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: auto;
+}
+
+.filter {
+    padding: 10px;
+}
+
+button {
+    margin-left: 20px;
+}

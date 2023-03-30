@@ -55,10 +55,10 @@ const App = () => {
     if (persons.find(e => e.name === newPerson.name)) {
       if (window.confirm(`${newPerson.name} is already in the phonebook. Would you like to update their number?`)){
         const contact = persons.find(e => e.name === newPerson.name)
-        const url = `http://localhost:3001/persons/${contact.id}`
+        const id = `${contact.id}`
         const changedContact = { ...contact, number: newNumber }
         operations
-          .updateContact(url, changedContact)
+          .updateContact(id, changedContact)
           .then(res => {
             setPersons(persons.map(e => e.id !== contact.id ? e : res.data))
             setToNotification(`${contact.name} Updated!`)
@@ -100,10 +100,9 @@ const App = () => {
     setNewFilter(event.target.value)
   }
   const deleteContact = (id) => {
-    const url = `http://localhost:3001/persons/${id}`
     if(window.confirm('Are you sure you want to delete this contact?')){ 
       operations
-        .removeContact(url)
+        .removeContact(id)
         .then(res => { 
           hook()
           setToNotification("Contact Deleted")

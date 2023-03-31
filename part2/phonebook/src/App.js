@@ -63,7 +63,7 @@ const App = () => {
             setPersons(persons.map(e => e.id !== contact.id ? e : res.data))
             setToNotification(`${contact.name} Updated!`)
           })
-          .catch(err => setToError('Contact No Longer Exists'))
+          .catch(err => setToError(err.response.data.error))
           setNewName('')
         return(
           setNewNumber(''))
@@ -82,6 +82,7 @@ const App = () => {
         setNewName('')   
         setNewNumber('')  
       })
+      .catch(err => setToError(err.response.data.error))
   }
 
   const setToShowFilter = (event) => {

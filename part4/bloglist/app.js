@@ -11,12 +11,12 @@ mongoose.set('strictQuery', false)
 const url = config.MONGODB_URI
 mongoose
   .connect(url)
-  .then(res => {
+  .then(() => {
     logger.info('Connection Successful')
-})
+  })
   .catch(err => {
     logger.error('Error during connection: ', err.message)
-})
+  })
 
 app.use(cors())
 app.use(express.json())

@@ -6,7 +6,7 @@ The course introduce to modern JavaScript-based web development. The main focus 
 
 ### About this repository
 
-This repository contains my own exercise solutions to the 2021/22 edition of the [Full Stack Open](https://fullstackopen.com/en) course from the [University of Helsinki](https://www.helsinki.fi/en).
+This repository contains my own exercise solutions to the latest edition of the [Full Stack Open](https://fullstackopen.com/en) course from the [University of Helsinki](https://www.helsinki.fi/en).
 
 ### Part 0 - [Fundamentals of Web apps](https://fullstackopen.com/en/part0)
 

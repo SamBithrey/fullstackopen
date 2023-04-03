@@ -40,5 +40,5 @@ This part covers how to display list items in _React_ and how to handle forms. I
 
 This part is focused on the backend. How to: implement a simple _REST API_ in _Node.js_ using _Express_, connect to a database (_MongoDB_) to store and retrieve data, deploy your app.
 
-- [phonebook](/part3/phonebookbackend) - The app source backend code.
-- [phonebook](https://phonebook-backend-ldwv.onrender.com/) - The app deployed on Heroku. Frontend from part 2 and Backend from part 3 works together.
+- [phonebook](/part3.0/phonebookbackend) - The app source backend code.
+- [phonebook](https://phonebook-backend-ldwv.onrender.com/) - The app deployed on Render. Frontend from part 2 and Backend from part 3 works together.

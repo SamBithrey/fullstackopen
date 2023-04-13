@@ -7,13 +7,12 @@ const Blog = forwardRef((props, refs) => {
   Blog.displayName = 'Blog'
 
   const [visibility, setVisibility] = useState(false)
-  const [deleteOption, setDeleteOption] = useState('none')
-  const hideWhenVisible = { display: visibility ? 'none' : '' }
-  const showWhenVisible = { display: visibility ? '' : 'none' }
 
-  if(blog.user.username === user.username) {
-    if(deleteOption === 'none') {
-      setDeleteOption('')
+  const deleteButton = () => {
+    if (blog.user.username === user.username) {
+      return (
+        <button onClick={deleteBlog}>Delete?</button>
+      )
     }
   }
 
@@ -37,21 +36,25 @@ const Blog = forwardRef((props, refs) => {
     }
   }
 
+  if (!visibility) {
+    return (
+      <div key={blog.id} className="blogpost">
+        <p className='blog-title'>Title: {blog.title}</p>
+        <p className='blog-author'>Author: {blog.author}</p>
+        <button onClick={toggleVisibility} className='show-more'>Show More Info!</button>
+      </div>
+    )
+  }
 
   return (
     <div key={blog.id} className="blogpost">
-        Title: {blog.title}<br/>
-        Author: {blog.author}<br/>
-      <div style={hideWhenVisible}>
-        <button onClick={toggleVisibility}>Show More Info!</button>
-      </div>
-      <div style={showWhenVisible}>
-          Likes: {blog.likes} <button onClick={like}><i className="fa fa-thumbs-o-up"></i></button><br/>
-          URL: {blog.url}<br/>
-          Posted by: {blog.user.username}<br/>
-        <button style={{ display: deleteOption }} onClick={deleteBlog}>Delete?</button>
-        <button onClick={toggleVisibility}>Hide</button>
-      </div>
+      <p className='blog-title'>Title: {blog.title}</p>
+      <p className='blog-author'>Author: {blog.author}</p>
+      <p className='blog-likes'>Likes: {blog.likes}<button onClick={like} className='likeButton'><i className="fa fa-thumbs-o-up"></i></button></p>
+      <p className='blog-url'>URL: {blog.url}</p>
+      <p className='blog-poster'>Posted by: {blog.user.username}</p>
+      <div>{deleteButton()}</div>
+      <button onClick={toggleVisibility} className='hide'>Hide</button>
     </div>
   )
 })

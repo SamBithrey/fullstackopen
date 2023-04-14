@@ -11,7 +11,7 @@ const Blog = forwardRef((props, refs) => {
   const deleteButton = () => {
     if (blog.user.username === user.username) {
       return (
-        <button onClick={deleteBlog}>Delete?</button>
+        <button onClick={deleteBlog} id='deleteButton'>Delete?</button>
       )
     }
   }
@@ -38,19 +38,19 @@ const Blog = forwardRef((props, refs) => {
 
   if (!visibility) {
     return (
-      <div key={blog.id} className="blogpost">
+      <div key={blog.id} className="blogpost" id='blogpost'>
         <p className='blog-title'>Title: {blog.title}</p>
         <p className='blog-author'>Author: {blog.author}</p>
-        <button onClick={toggleVisibility} className='show-more'>Show More Info!</button>
+        <button onClick={toggleVisibility} className='show-more' id='showMore'>Show More Info!</button>
       </div>
     )
   }
 
   return (
-    <div key={blog.id} className="blogpost">
+    <div key={blog.id} className="blogpost" id='blogpost'>
       <p className='blog-title'>Title: {blog.title}</p>
       <p className='blog-author'>Author: {blog.author}</p>
-      <p className='blog-likes'>Likes: {blog.likes}<button onClick={like} className='likeButton'><i className="fa fa-thumbs-o-up"></i></button></p>
+      <p className='blog-likes' id='blog-likes'>Likes: {blog.likes}<button onClick={like} className='likeButton' id='likeButton'><i className="fa fa-thumbs-o-up"></i></button></p>
       <p className='blog-url'>URL: {blog.url}</p>
       <p className='blog-poster'>Posted by: {blog.user.username}</p>
       <div>{deleteButton()}</div>

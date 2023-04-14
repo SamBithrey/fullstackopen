@@ -36,7 +36,7 @@ const Login = ({ handleLogin, username, password, setUsername, setPassword }) =>
           />
         </div>
         <div className="field">
-          <button className="button" type="submit">Login</button>
+          <button className="button" type="submit" id='loginbutton'>Login</button>
         </div>
       </form>
     </div>

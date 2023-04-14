@@ -19,7 +19,7 @@ const NewBlogToggle = forwardRef((props, refs) => {
   return (
     <div>
       <div style={hideWhenVisible}>
-        <button onClick={toggleVisibility}>Create New Blog!</button>
+        <button onClick={toggleVisibility} id='newBlogButton'>Create New Blog!</button>
       </div>
       <div style={showWhenVisible}>
         {props.children}

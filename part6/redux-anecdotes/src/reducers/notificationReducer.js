@@ -23,4 +23,23 @@ const notificationSlice = createSlice({
 })
 
 export const { voteNotification, newNotification, clearNotification, errorNotification } = notificationSlice.actions
+
+export const voted = (anecdote, delay) => {
+    return async dispatch => {
+        dispatch(voteNotification(anecdote.content))
+        setTimeout(() => {dispatch(clearNotification())}, delay*1000)
+    }
+}
+export const created = (delay) => {
+    return dispatch => {
+        dispatch(newNotification())
+        setTimeout(() => {dispatch(clearNotification())}, delay*1000)
+    }
+}
+export const creationError = (delay) => {
+    return dispatch => {
+        dispatch(errorNotification())
+        setTimeout(() => {dispatch(clearNotification())}, delay*1000)
+    }
+}
 export default notificationSlice.reducer

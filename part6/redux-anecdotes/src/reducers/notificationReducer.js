@@ -13,11 +13,14 @@ const notificationSlice = createSlice({
         newNotification(state, action) {
             return 'New anecdote created!'
         },
+        errorNotification(state, action) {
+            return 'Please input data!'
+        },
         clearNotification(state, action) {
             return initialState
         }
     }
 })
 
-export const { voteNotification, newNotification, clearNotification } = notificationSlice.actions
+export const { voteNotification, newNotification, clearNotification, errorNotification } = notificationSlice.actions
 export default notificationSlice.reducer

@@ -66,3 +66,13 @@ This part is focused on token based authentication and testing the _React_ compo
 - [bloglist-frontend](/part5/bloglist-frontend) - The app frontend code.
 
 [View solutions folder](/part5)
+
+### Part 6 - [Advanced state management](https://fullstackopen.com/en/part6)
+
+This part is focused on _Redux_, which can be used for more complex state management of your _React_ app (covers concepts like immutability, global store, actions and reducers). Also this chapter covers how to use _Redux_ with `hooks`, and `redux thunk` for asynchronous code. An additional section is included on _React Query_ using `useReducer` and `React context` to simplify server state management.
+
+- [unicafe-redux](/part6/unicafe-redux) - The app source code.
+- [redux-anecdotes](/part6/redux-anecdotes) - The app source code.
+- [query-anecdotes](/part6/query-anecdotes/) - The  app source code.
+
+[View solutions folder](/part6)

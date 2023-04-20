@@ -29,6 +29,7 @@ const calculateBmi = (heightInCM: number, weightInKG: number) : string => {
             return "Overweight"
         case (BMI >= 30):
             return "Obese"
+        default: return "Input variables"
     }
 }
 
@@ -42,3 +43,5 @@ try {
     }
     console.log(errorMessage);
 }
+
+export default calculateBmi

@@ -11,6 +11,12 @@ const getAll = async () => {
   return data;
 };
 
+const getSingle = (id: string|undefined) => {
+  return axios
+    .get<Patient>(`${apiBaseUrl}/patients/${id}`)
+    .then(res => res.data);
+};
+
 const create = async (object: PatientFormValues) => {
   const { data } = await axios.post<Patient>(
     `${apiBaseUrl}/patients`,
@@ -20,8 +26,7 @@ const create = async (object: PatientFormValues) => {
   return data;
 };
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  getAll, create
+  getAll, create, getSingle
 };
 

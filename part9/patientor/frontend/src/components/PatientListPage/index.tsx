@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Box, Table, Button, TableHead, Typography, TableCell, TableRow, TableBody } from '@mui/material';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import axios from 'axios';
 
 import { PatientFormValues, Patient } from "../../types";
@@ -66,7 +68,7 @@ const PatientListPage = ({ patients, setPatients } : Props ) => {
         <TableBody>
           {Object.values(patients).map((patient: Patient) => (
             <TableRow key={patient.id}>
-              <TableCell>{patient.name}</TableCell>
+              <TableCell><Button component={Link} to={`/api/patients/${patient.id}`} variant="contained" color="primary">{patient.name}</Button></TableCell>
               <TableCell>{patient.gender}</TableCell>
               <TableCell>{patient.occupation}</TableCell>
               <TableCell>
@@ -78,6 +80,7 @@ const PatientListPage = ({ patients, setPatients } : Props ) => {
       </Table>
       <AddPatientModal
         modalOpen={modalOpen}
+        // eslint-disable-next-line @typescript-eslint/no-misused-promises
         onSubmit={submitNewPatient}
         error={error}
         onClose={closeModal}

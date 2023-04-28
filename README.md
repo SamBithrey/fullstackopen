@@ -12,6 +12,8 @@ This repository contains my own exercise solutions to the latest edition of the 
 
 ![Certificate of completion Fullstack Open Course from the University of Helsinki](https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/e290f66d1dc63b5b8c36db335ef7880a)
 
+![Certificate of completion Fullstack Open TypeScript Course from the University of Helsinki](https://studies.cs.helsinki.fi/stats/api/certificate/fs-typescript/en/3fb84bb28cd32218d5668a1bc9ae3a48)
+
 ### Part 0 - [Fundamentals of Web apps](https://fullstackopen.com/en/part0)
 
 An overall introduction to the course. It introduces to some concepts like HTTP requests, how traditional web apps work, DOM, CSS and Single Page Applications.

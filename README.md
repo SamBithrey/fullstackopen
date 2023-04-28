@@ -76,3 +76,14 @@ This part is focused on _Redux_, which can be used for more complex state manage
 - [query-anecdotes](/part6/query-anecdotes/) - The  app source code.
 
 [View solutions folder](/part6)
+
+### Part 9 - [TypeScript](https://fullstackopen.com/en/part9)
+
+This is a standalone part focused on being able to understand, develop and configure projects using TypeScript. The tools previous learnt have been updated to work with the TypeScript library covering _React_, _Express_ and building end-to-end features.
+
+- [courseinfo](/part9/courseinfo/) - The app source code.
+- [first-steps-with-typescript](/part9/first-steps-with-typescript/) - The app source code.
+- [flight-diary](/part9/flight-diary/) - The  app source code.
+- [patientor](/part9/patientor/) - The  app source code.
+
+[View solutions folder](/part9)
